@@ -20,7 +20,7 @@ class ValidateController extends Controller
             return $this->jsonResponse(false, "No Headers provided", 400);
         }
 
-        if ($headers["Secret-Token"] == config("api.auth.security.Secret-Token") && $headers["User-Agent"] == config("api.auth.security.User-Agent")) {
+        if ($headers->get('Secret-Token') == config("api.auth.security.Secret-Token") && $headers->get('User-Agent') == config("api.auth.security.User-Agent")) {
             return true;
         }
 

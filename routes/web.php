@@ -6,8 +6,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix("api")->group(function () {
     Route::prefix("auth")->group(function () {
-        Route::post("auth/validate", [\App\Http\Controllers\auth\ValidateController::class, "index"]);
-        Route::post("auth/update", [\App\Http\Controllers\auth\UpdateController::class, "index"]);
+        Route::post("validate", [\App\Http\Controllers\auth\ValidateController::class, "index"]);
+        Route::post("update", [\App\Http\Controllers\auth\UpdateController::class, "index"]);
     });
 
     Route::prefix('private')->group(function () {
